@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 400,
+    "title": "Total Deaths by Cancer Type",
+    "data": {
+      "url": "https://raw.githubusercontent.com/TehWinnie/FIT3179_Assignment2/main/data/total_death_by_cancer_type.csv"
+    },
+    "mark": {
+      "type": "bar"
+    },
+    "encoding": {
+      "x": {
+        "field": "Cancer Type",
+        "type": "nominal",
+        "title": "Cancer Type",
+        "axis": {"labelAngle": 45}
+      },
+      "y": {
+        "field": "Total Deaths",
+        "type": "quantitative",
+        "title": "Total Deaths"
+      },
+      "color": {
+        "field": "Total Deaths",
+        "type": "quantitative",
+        "scale": {
+          "type": "linear",
+          "domain": [0, 300000000], 
+          "range": ["#87CEEB","#110080"]
+        },
+        "legend": null
+      },
+      "tooltip": [
+        {"field": "Cancer Type", "title": "Cancer Type: "},
+        {"field": "Total Deaths", "title": "Total Death (1990~2019): ", "format": ",d"}
+      ]
+    },
+    "config": {
+      "range": {
+        "category": {"scheme": "blue"}
+      }
+    }
+  }

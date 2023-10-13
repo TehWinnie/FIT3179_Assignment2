@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    
+    <script src="vega_lite_vis.js"></script>
+    <link rel="stylesheet" href="index.css"> 
+
+    <title>Data Visualisation 2 </title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .map-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto; 
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        .map {
+            width: 48%;
+            margin: 20px 0 20px 20px; 
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow: hidden;
+        }
+        
+        .map-title {
+            width: 100%;
+            text-align: center; 
+            font-size: 20px; 
+            font-weight: bold; 
+            margin-bottom: 10px 0;
+        }
+
+        .chart {
+            margin-bottom: 40px; 
+        }
+
+        .word {
+            
+            font-size: 16px; 
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Visualization 2</h1>
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-top">
+          <h2>Death</h2>
+          <p>Death is an unalterable aspect of the human experience, a universal certainty that transcends national boundaries, cultural differences, and continental boundaries. It is a natural and unavoidable aspect of existence, but its impact on global societies has evolved over time, taking on new dimensions and posing new challenges. In recent years, death has become a significant issue in virtually every country, with a multitude of factors contributing to this worldwide dilemma.</p>
+        </div>
+      </div>
+    </div>
+    <div class="other-content">
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div class="chart-container-right">
+                    <div id="choropleth_chart6" class="chart"></div>
+                    <div class="description description-right">
+                        <h2>Deaths for Different Causes</h2>
+                        <p>The amount of world deaths attributable to diseases is substantial. In innumerable countries, infectious and non-communicable diseases take a hefty toll on human life. Malaria, tuberculosis, and HIV/AIDS continue to claim lives, particularly in regions with limited resources. 
+                            
+                            Simultaneously, non-communicable diseases such as cardiovascular diseases, cancer, and diabetes account for a significant proportion of global fatalities, which are frequently associated with lifestyle decisions and ageing populations. The burden of disease-related mortality is a stark reminder of the critical need for robust healthcare systems, preventive measures, and international cooperation to combat this pervasive problem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="other-content">
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div class="description description-left">
+                <h2>Cancer</h2>
+                <p>Cancer in particular stands out as a prominent cause of disease-related fatalities, accounting for a sizeable proportion of the death toll. Its pervasiveness is felt in every region of the globe, affecting individuals regardless of age, gender, or socioeconomic standing. The insidious nature of cancer, which is characterised by its ability to infiltrate virtually any organ or tissue, poses a formidable challenge for healthcare systems around the world. 
+                 </p>
+            </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="chart-container-left">
+                <div id="choropleth_chart7" class="chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="pure-g">
+    <div class="pure-u-1-1">
+      <div class="description description-top">
+        <h2>Total Average Cancer Deaths Rate (1990 ~ 2019) per 100,000 people</h2>
+        <p>These are the maps that represent people according to their age range who have died because of cancer. We can observe that people above 70+ have the highest rate of death due to cancer, followed by the age group 50~69. By examining these maps, we can also observe the countries with the highest and lowest average Cancer Death Rates (1990 ~ 2019) per 100,000 people for each age range.</p>
+            
+      </div>
+    </div>
+</div>
+<div class="map-container">
+    <div id="choropleth_map1" class="map"></div>
+    <div id="choropleth_map2" class="map"></div>
+    <div id="choropleth_map3" class="map"></div>
+    <div id="choropleth_map4" class="map"></div>
+    <div id="choropleth_map5" class="map"></div>
+</div>
+    
+</body>
+</html>

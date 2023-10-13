@@ -1,0 +1,102 @@
+body *{
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+
+.other-content {
+    width: 1200px;
+    background-color: #f0f8ff;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+    padding: 20px;
+}
+
+
+
+.description h2,
+h1 {
+    margin-top: 10px;
+}
+
+
+
+.description-top {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: white;
+    background-color: #84b2db;
+}
+
+.description-right {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-right: 20px; 
+    padding-left: 10px;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    text-align: left;
+    color: white;
+    background-color: #84b2db;
+    float: right; 
+    width: 50%; 
+}
+.description-right p {
+    white-space: pre-line; 
+}
+
+
+.description-left {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-right: 0px; 
+    padding-left: 10px;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    margin-left: -30px;
+    text-align: left;
+    color: white;
+    background-color: #84b2db;
+    float: left; 
+    width: 140%; 
+}
+
+.description-left p {
+    white-space: pre-line;
+}
+
+/* Adjust the width of chart-container and its children */
+.chart-container-right {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    width: 104%; 
+}
+
+.chart {
+    width: 80%; 
+}
+
+
+.pure-g {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.chart-container-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+    margin-right: 100px; 
+}
+
+
+.small-font {
+    font-size: 14px;
+}
