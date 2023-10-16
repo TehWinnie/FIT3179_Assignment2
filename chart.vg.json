@@ -1,130 +1,156 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 400,
-    "title": "Average Deaths of Different Causes for Each Country",
-    "data": {
-      "url": "https://raw.githubusercontent.com/TehWinnie/FIT3179_Assignment2/main/data/average_deaths_by_country.csv"
-    },
-    "params": [
-      {
-        "name": "selectedColumn",
-        "value": "All",
-        "bind": {
-          "input": "select",
-          "options": [
-            "All",
-            "Meningitis",
-            "Alzheimer",
-            "Parkinson",
-            "Nutritional Deficiencies",
-            "Malaria",
-            "Drowning",
-            "Interpersonal Violence",
-            "Maternal Disorders",
-            "HIV/AIDS",
-            "Drug Use Disorders",
-            "Tuberculosis",
-            "Cardiovascular Diseases",
-            "Lower Respiratory Infections",
-            "Neonatal Disorders",
-            "Alcohol Use Disorders",
-            "Self-Harm",
-            "Exposure to Forces of Nature",
-            "Diarrheal Diseases",
-            "Environmental Heat and Cold Exposure",
-            "Neoplasms",
-            "Conflict and Terrorism",
-            "Diabetes Mellitus",
-            "Chronic Kidney Disease",
-            "Poisonings",
-            "Protein-energy Malnutrition",
-            "Terrorism",
-            "Road Injuries",
-            "Chronic Respiratory Diseases",
-            "Cirrhosis and Other Chronic Liver Diseases",
-            "Digestive Diseases",
-            "Fire, Heat, and Hot Substances",
-            "Acute Hepatitis"
-          ],
-          "name": "Select a type of Death: "
-        }
-      }
-    ],
-    "transform": [
-      {
-        "fold": [
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 400,
+  "title": "Average Deaths of Different Causes for Each Country",
+  "data": {
+    "url": "https://raw.githubusercontent.com/TehWinnie/FIT3179_Assignment2/main/data/average_deaths_by_country.csv"
+  },
+  "params": [
+    {
+      "name": "selectedColumn",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
           "Meningitis",
           "Alzheimer",
           "Parkinson",
           "Nutritional Deficiencies",
           "Malaria",
           "Drowning",
-            "Interpersonal Violence",
-            "Maternal Disorders",
-            "HIV/AIDS",
-            "Drug Use Disorders",
-            "Tuberculosis",
-            "Cardiovascular Diseases",
-            "Lower Respiratory Infections",
-            "Neonatal Disorders",
-            "Alcohol Use Disorders",
-            "Self-Harm",
-            "Exposure to Forces of Nature",
-            "Diarrheal Diseases",
-            "Environmental Heat and Cold Exposure",
-            "Neoplasms",
-            "Conflict and Terrorism",
-            "Diabetes Mellitus",
-            "Chronic Kidney Disease",
-            "Poisonings",
-            "Protein-energy Malnutrition",
-            "Terrorism",
-            "Road Injuries",
-            "Chronic Respiratory Diseases",
-            "Cirrhosis and Other Chronic Liver Diseases",
-            "Digestive Diseases",
-            "Fire, Heat, and Hot Substances",
-            "Acute Hepatitis"
+          "Interpersonal Violence",
+          "Maternal Disorders",
+          "HIV/AIDS",
+          "Drug Use Disorders",
+          "Tuberculosis",
+          "Cardiovascular Diseases",
+          "Lower Respiratory Infections",
+          "Neonatal Disorders",
+          "Alcohol Use Disorders",
+          "Self-Harm",
+          "Exposure to Forces of Nature",
+          "Diarrheal Diseases",
+          "Environmental Heat and Cold Exposure",
+          "Neoplasms",
+          "Conflict and Terrorism",
+          "Diabetes Mellitus",
+          "Chronic Kidney Disease",
+          "Poisonings",
+          "Protein-energy Malnutrition",
+          "Terrorism",
+          "Road Injuries",
+          "Chronic Respiratory Diseases",
+          "Cirrhosis and Other Chronic Liver Diseases",
+          "Digestive Diseases",
+          "Fire, Heat, and Hot Substances",
+          "Acute Hepatitis"
         ],
-        "as": ["selectedColumn", "selectedValue"]
-      },
-      {
-        "filter": "selectedColumn === 'All' || selectedColumn === datum.selectedColumn"
-      },
-      {
-        "calculate": "selectedColumn === 'All' ? (datum.selectedValue) : datum.selectedValue",
-        "as": "selectedValue"
+        "name": "Select a type of Death: "
       }
-    ],
-    "mark": {
-      "type": "circle",
-      "size": 100, 
-      "stroke": "black", 
-      "strokeWidth": 1.5
     },
-    "encoding": {
-      "x": {
-        "field": "selectedColumn",
-        "type": "nominal",
-        "title": "Type of death"
-      },
-      "y": {
-        "field": "selectedValue",
-        "type": "quantitative",
-        "title": "Average Deaths"
-      },
-      
-      "color": {
-        "field": "selectedColumn",
-        "type": "nominal",
-        "scale": {"scheme": "set1"}, 
-        "title": "Type"
-      },
-      "tooltip": [ 
-        {"field": "Entity", "type": "nominal", "title": "Country or Region"},
-        {"field": "selectedValue", "type": "quantitative", "title": "Average Deaths"},
-        {"field": "selectedColumn", "type": "nominal", "title": "Type"}
-      ]
+    {
+      "name": "minDeaths",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 16000000,
+        "step": 1000,
+        "name": "Set Min Deaths"
+      }
+    },
+    {
+      "name": "maxDeaths",
+      "value": 16000000,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 16000000,
+        "step": 1000,
+        "name": "Set Max Deaths"
+      }
     }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "Meningitis",
+        "Alzheimer",
+        "Parkinson",
+        "Nutritional Deficiencies",
+        "Malaria",
+        "Drowning",
+        "Interpersonal Violence",
+        "Maternal Disorders",
+        "HIV/AIDS",
+        "Drug Use Disorders",
+        "Tuberculosis",
+        "Cardiovascular Diseases",
+        "Lower Respiratory Infections",
+        "Neonatal Disorders",
+        "Alcohol Use Disorders",
+        "Self-Harm",
+        "Exposure to Forces of Nature",
+        "Diarrheal Diseases",
+        "Environmental Heat and Cold Exposure",
+        "Neoplasms",
+        "Conflict and Terrorism",
+        "Diabetes Mellitus",
+        "Chronic Kidney Disease",
+        "Poisonings",
+        "Protein-energy Malnutrition",
+        "Terrorism",
+        "Road Injuries",
+        "Chronic Respiratory Diseases",
+        "Cirrhosis and Other Chronic Liver Diseases",
+        "Digestive Diseases",
+        "Fire, Heat, and Hot Substances",
+        "Acute Hepatitis"
+      ],
+      "as": ["selectedColumn", "selectedValue"]
+    },
+    {
+      "filter": "selectedColumn === 'All' || selectedColumn === datum.selectedColumn"
+    },
+    {
+      "filter": "datum.selectedValue >= minDeaths && datum.selectedValue <= maxDeaths"
+    },
+    {
+      "calculate": "selectedColumn === 'All' ? (datum.selectedValue) : datum.selectedValue",
+      "as": "selectedValue"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "size": 100,
+    "stroke": "black",
+    "strokeWidth": 1.5
+  },
+  "encoding": {
+    "x": {
+      "field": "selectedColumn",
+      "type": "nominal",
+      "title": "Type of death",
+      "axis": {"labelAngle": 75}
+    },
+    "y": {
+      "field": "selectedValue",
+      "type": "quantitative",
+      "title": "Average Deaths",
+      "scale": {"domain": [0, 16000000]}
+    },
+    "color": {
+      "field": "selectedColumn",
+      "type": "nominal",
+      "scale": {"scheme": "set1"},
+      "title": "Type"
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country or Region"},
+      {"field": "selectedValue", "type": "quantitative", "title": "Average Deaths"},
+      {"field": "selectedColumn", "type": "nominal", "title": "Type"}
+    ]
   }
+}
