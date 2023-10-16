@@ -24,7 +24,7 @@ h1 {
     padding-right: 10px;
     text-align: center;
     color: black;
-    background-color: #f0f8ff;
+    background-color: #c4e3ff;
 }
 
 .description-right {
@@ -32,11 +32,11 @@ h1 {
     padding-bottom: 40px;
     padding-right: 20px; 
     padding-left: 10px;
-    margin-top: 110px;
+    margin-top: 80px;
     margin-bottom: 200px;
     text-align: left;
     color: black;
-    background-color: #f0f8ff;
+    background-color: #c4e3ff;
     float: right; 
     width: 50%; 
 }
@@ -50,14 +50,14 @@ h1 {
     padding-bottom: 40px;
     padding-right: 0px; 
     padding-left: 10px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 200px;
-    margin-left: -30px;
+    margin-left: -80px;
     text-align: left;
     color: black;
-    background-color: #f0f8ff;
+    background-color: #c4e3ff;
     float: left; 
-    width: 140%; 
+    width: 150%; 
 }
 
 .description-left p {
