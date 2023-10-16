@@ -76,7 +76,7 @@ h1 {
 }
 
 
-.pure-g {
+.contain {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -90,9 +90,10 @@ h1 {
 }
 
 
-.small-font {
-    font-size: 14px;
+.descript-font p {
+    font-size: 16px;
 }
+
 
 p {
     font-size: 20px;
